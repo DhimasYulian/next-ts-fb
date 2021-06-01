@@ -1,13 +1,13 @@
 import Image from "next/image"
-import moment from 'moment'
 import {ChatAltIcon, ShareIcon, ThumbUpIcon} from "@heroicons/react/outline"
+import firebase from 'firebase'
 
 interface Props {
     name: string,
     email: string,
     image: string,
     message: string,
-    timestamp: string,
+    timestamp: firebase.firestore.Timestamp,
     file: string
 }
 
@@ -19,7 +19,7 @@ const Post: React.FC<Props> = ({name, image, message, timestamp, file}) => {
                 <Image src={image} width={40} height={40} className="rounded-full" />
                 <div>
                     <p className="font-medium">{name}</p>
-                    {timestamp ? <p className="text-xs text-gray-400">{moment(timestamp).toLocaleString()}</p> : <p className="text-xs text-gray-400">Loading...</p>}
+                    {timestamp ? <p className="text-xs text-gray-400">{timestamp.toDate().toDateString()}</p> : <p className="text-xs text-gray-400">Loading...</p>}
                 </div>
             </div>
             <p className="pt-4">{message}</p>
