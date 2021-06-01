@@ -1,5 +1,5 @@
 ## Next.js + Typescript Project
 
-Upload image and post using Firebase
+Fb like App, Upload image and post to Firebase using Next JS and Typscript
 
-[See Demo](https://next-ts-fb.netlify.app/)
+[See Demo](https://next-ts-fb-ccw25i6fu-dhimasyulian.vercel.app/)
