@@ -1,4 +1,5 @@
 import Image from "next/image"
+import moment from 'moment'
 import {ChatAltIcon, ShareIcon, ThumbUpIcon} from "@heroicons/react/outline"
 
 interface Props {
@@ -18,7 +19,7 @@ const Post: React.FC<Props> = ({name, image, message, timestamp, file}) => {
                 <Image src={image} width={40} height={40} className="rounded-full" />
                 <div>
                     <p className="font-medium">{name}</p>
-                    {timestamp ? <p className="text-xs text-gray-400">{new Date(timestamp.toDate()).toDateString()}</p> : <p className="text-xs text-gray-400">Loading...</p>}
+                    {timestamp ? <p className="text-xs text-gray-400">{moment(timestamp).toLocaleString()}</p> : <p className="text-xs text-gray-400">Loading...</p>}
                 </div>
             </div>
             <p className="pt-4">{message}</p>
